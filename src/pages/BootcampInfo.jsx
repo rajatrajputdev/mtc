@@ -62,6 +62,7 @@ const BootcampInfo = () => {
   useEffect(() => {
     if (expandedCard && expandedCardRef.current && cardBounds) {
       document.body.style.overflow = 'hidden';
+      if (window.lenis) window.lenis.stop();
       
       // Set initial state matching exactly the clicked card's bounds
       gsap.set(expandedCardRef.current, {
@@ -100,6 +101,7 @@ const BootcampInfo = () => {
       );
     } else {
       document.body.style.overflow = '';
+      if (window.lenis) window.lenis.start();
     }
     
     // Cleanup if component unmounts while modal is open
@@ -464,7 +466,7 @@ const BootcampInfo = () => {
       {/* Expanded Roadmap Card Overlay */}
       {expandedCard && (
         <div className="expanded-card-backdrop" ref={overlayRef} onClick={closeExpandedCard} style={{ position: 'fixed', inset: 0, background: 'rgba(5, 5, 5, 0.8)', backdropFilter: 'blur(8px)', zIndex: 10000, opacity: 0 }}>
-          <div className="timeline-card expanded" ref={expandedCardRef} onClick={e => e.stopPropagation()} style={{ background: '#fff', border: '4px solid #1d1c1c', borderRadius: '16px', boxShadow: '8px 8px 0 #1d1c1c', padding: contentVisible ? '3rem' : '2rem', position: 'fixed', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+          <div className="timeline-card expanded" ref={expandedCardRef} onClick={e => e.stopPropagation()} data-lenis-prevent="true" style={{ background: '#fff', border: '4px solid #1d1c1c', borderRadius: '16px', boxShadow: '8px 8px 0 #1d1c1c', padding: contentVisible ? '3rem' : '2rem', position: 'fixed', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
             
             {contentVisible ? (
               <div style={{ opacity: 1, transition: 'opacity 0.3s ease', display: 'flex', flexDirection: 'column', height: '100%' }}>
