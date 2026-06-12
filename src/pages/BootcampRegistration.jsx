@@ -187,22 +187,22 @@ const BootcampRegistration = () => {
 
             <form className="bootcamp-reg-form" ref={formRef} onSubmit={handleSubmit}>
               <div className="bootcamp-reg-input-group">
-                <label>Full Name</label>
+                <label>Full Name <span className="text-red-500">*</span></label>
                 <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" required />
               </div>
 
               <div className="bootcamp-reg-input-group">
-                <label>Email Address</label>
+                <label>Email Address <span className="text-red-500">*</span></label>
                 <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" required />
               </div>
 
               <div className="bootcamp-reg-input-group">
-                <label>Contact Number (WhatsApp)</label>
+                <label>Contact Number (WhatsApp) <span className="text-red-500">*</span></label>
                 <input type="tel" name="contactNumber" value={formData.contactNumber} onChange={handleChange} placeholder="+91 9876543210" required />
               </div>
 
               <div className="bootcamp-reg-input-group">
-                <label>College</label>
+                <label>College <span className="text-red-500">*</span></label>
                 <select name="collegeType" value={formData.collegeType} onChange={handleChange} required>
                   <option value="" disabled>Select College</option>
                   <option value="Amity">Amity University</option>
@@ -212,30 +212,30 @@ const BootcampRegistration = () => {
 
               {formData.collegeType === 'Amity' && (
                 <div className="bootcamp-reg-input-group">
-                  <label>Enrollment No.</label>
+                  <label>Enrollment No. <span className="text-red-500">*</span></label>
                   <input type="text" name="enrollmentNo" value={formData.enrollmentNo} onChange={handleChange} placeholder="A123456789" required />
                 </div>
               )}
 
               {formData.collegeType === 'Other' && (
                 <div className="bootcamp-reg-input-group">
-                  <label>College Name</label>
+                  <label>College Name <span className="text-red-500">*</span></label>
                   <input type="text" name="collegeName" value={formData.collegeName} onChange={handleChange} placeholder="Tech University" required />
                 </div>
               )}
 
               <div className="bootcamp-reg-input-group">
-                <label>Course Name</label>
+                <label>Course Name <span className="text-red-500">*</span></label>
                 <input type="text" name="courseName" value={formData.courseName} onChange={handleChange} placeholder="e.g. BTech, BCA" required />
               </div>
 
               <div className="bootcamp-reg-input-group">
-                <label>Specialisation</label>
+                <label>Specialisation <span className="text-red-500">*</span></label>
                 <input type="text" name="specialisation" value={formData.specialisation} onChange={handleChange} placeholder="e.g. CSE, Data Science" required />
               </div>
 
               <div className="bootcamp-reg-input-group">
-                <label>Year of Study</label>
+                <label>Year of Study <span className="text-red-500">*</span></label>
                 <select name="year" value={formData.year} onChange={handleChange} required>
                   <option value="" disabled>Select Year</option>
                   <option value="1">1st Year</option>
@@ -246,18 +246,18 @@ const BootcampRegistration = () => {
               </div>
 
               <div className="bootcamp-reg-input-group">
-                <label>LinkedIn URL</label>
+                <label>LinkedIn URL <span className="text-red-500">*</span></label>
                 <input type="url" name="linkedinUrl" value={formData.linkedinUrl} onChange={handleChange} placeholder="https://linkedin.com/in/username" required />
               </div>
 
               <div className="bootcamp-reg-input-group">
-                <label>Github URL</label>
-                <input type="url" name="githubUrl" value={formData.githubUrl} onChange={handleChange} placeholder="https://github.com/username" required />
+                <label>Github URL <span className="text-gray-500 text-sm font-normal ml-2">(Optional)</span></label>
+                <input type="url" name="githubUrl" value={formData.githubUrl} onChange={handleChange} placeholder="https://github.com/username" />
               </div>
 
               <div className="bootcamp-reg-input-group">
-                <label>Motivation to Join</label>
-                <textarea name="motivation" value={formData.motivation} onChange={handleChange} placeholder="Why do you want to join this bootcamp?" rows="3" style={{width: '100%', padding: '12px', background: '#F4F4F0', border: '3px solid #1D1C1C', borderRadius: '8px', color: '#1D1C1C', fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', outline: 'none', resize: 'vertical'}} required></textarea>
+                <label>Motivation to Join <span className="text-gray-500 text-sm font-normal ml-2">(Optional)</span></label>
+                <textarea name="motivation" value={formData.motivation} onChange={handleChange} placeholder="Why do you want to join this bootcamp?" rows="3" style={{width: '100%', padding: '12px', background: '#F4F4F0', border: '3px solid #1D1C1C', borderRadius: '8px', color: '#1D1C1C', fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', outline: 'none', resize: 'vertical'}}></textarea>
               </div>
 
               <button type="submit" className="bootcamp-reg-submit bw-btn" disabled={loading}>

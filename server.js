@@ -28,13 +28,27 @@ app.use(express.json({ limit: '10kb' })); // Limit payload size to prevent paylo
 // MongoDB Connection
 const MONGO_URI = process.env.MONGO_URI;
 
-if (!MONGO_URI) {
-  console.warn("⚠️ Warning: MONGO_URI is not defined in .env file. Backend will not connect to database.");
-} else {
-  mongoose.connect(MONGO_URI)
-    .then(() => console.log('✅ Connected to MongoDB Atlas'))
-    .catch((err) => console.error('❌ MongoDB connection error:', err));
+let cachedConnection = global.mongoose || { conn: null, promise: null };
+global.mongoose = cachedConnection;
+
+async function connectToDatabase() {
+  if (cachedConnection.conn) return cachedConnection.conn;
+  if (!MONGO_URI) {
+    console.warn("⚠️ Warning: MONGO_URI is not defined in .env file. Backend will not connect to database.");
+    return null;
+  }
+  if (!cachedConnection.promise) {
+    cachedConnection.promise = mongoose.connect(MONGO_URI, {
+      serverSelectionTimeoutMS: 5000 // fail early if it cannot connect
+    }).then((mongoose) => mongoose);
+  }
+  cachedConnection.conn = await cachedConnection.promise;
+  console.log('✅ Connected to MongoDB Atlas');
+  return cachedConnection.conn;
 }
+
+// Connect initially
+connectToDatabase().catch((err) => console.error('❌ MongoDB connection error:', err));
 
 // Mongoose Schema & Model for full bootcamp registration
 const registrationSchema = new mongoose.Schema({
@@ -48,8 +62,8 @@ const registrationSchema = new mongoose.Schema({
   specialisation: { type: String, required: true },
   year: { type: String, required: true },
   linkedinUrl: { type: String, required: true },
-  githubUrl: { type: String, required: true },
-  motivation: { type: String, required: true },
+  githubUrl: { type: String }, // Optional
+  motivation: { type: String }, // Optional
   registrationDate: { type: Date, default: Date.now }
 });
 
@@ -63,7 +77,8 @@ app.get('/', (req, res) => {
 // API Routes
 app.post('/api/register', async (req, res) => {
   try {
-    if (!MONGO_URI) {
+    const db = await connectToDatabase();
+    if (!db) {
       return res.status(500).json({ error: "Backend database not configured." });
     }
 
@@ -84,8 +99,6 @@ app.post('/api/register', async (req, res) => {
     if (!specialisation) missing.push("Specialisation");
     if (!year) missing.push("Year of Study");
     if (!linkedinUrl) missing.push("LinkedIn URL");
-    if (!githubUrl) missing.push("GitHub URL");
-    if (!motivation) missing.push("Motivation");
 
     if (missing.length > 0) {
       return res.status(400).json({ error: `Please fill all required fields. Missing: ${missing.join(', ')}` });
@@ -109,6 +122,56 @@ app.post('/api/register', async (req, res) => {
     res.status(201).json({ message: "Registration successful", data: newRegistration });
   } catch (error) {
     console.error("Registration Error:", error);
+    res.status(500).json({ error: `Database Error: ${error.message || 'Internal Server Error'}` });
+  }
+});
+
+import jwt from 'jsonwebtoken';
+
+// Admin Login Route
+app.post('/api/admin/login', (req, res) => {
+  const { password } = req.body;
+  
+  if (!process.env.ADMIN_PASSWORD) {
+    console.error("⚠️ Warning: ADMIN_PASSWORD is not defined in environment variables.");
+    return res.status(500).json({ error: "Server misconfiguration. Admin login disabled." });
+  }
+
+  if (password === process.env.ADMIN_PASSWORD) {
+    const token = jwt.sign({ role: 'admin' }, process.env.ADMIN_PASSWORD, { expiresIn: '12h' });
+    return res.status(200).json({ token });
+  }
+
+  return res.status(401).json({ error: "Invalid password" });
+});
+
+// Middleware to verify admin JWT
+const verifyAdmin = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (!token) return res.status(401).json({ error: "Access denied" });
+
+  jwt.verify(token, process.env.ADMIN_PASSWORD, (err, decoded) => {
+    if (err || decoded.role !== 'admin') {
+      return res.status(403).json({ error: "Forbidden" });
+    }
+    next();
+  });
+};
+
+// Admin Registrations Route (Protected)
+app.get('/api/admin/registrations', verifyAdmin, async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    if (!db) {
+      return res.status(500).json({ error: "Backend database not configured." });
+    }
+
+    const registrations = await Registration.find().sort({ registrationDate: -1 });
+    res.status(200).json(registrations);
+  } catch (error) {
+    console.error("Fetch Registrations Error:", error);
     res.status(500).json({ error: `Database Error: ${error.message || 'Internal Server Error'}` });
   }
 });

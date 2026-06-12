@@ -13,6 +13,7 @@ import ContactUs from "./pages/ContactUs";
 import MsaSection from "./pages/MsaSection";
 import BootcampRegistration from "./pages/BootcampRegistration";
 import BootcampInfo from "./pages/BootcampInfo";
+import AdminPanel from "./pages/AdminPanel";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -42,7 +43,7 @@ const MainPage = () => {
 
 const GlobalOverlays = () => {
   const { pathname } = useLocation();
-  const hideGlobe = pathname.startsWith('/Bootcamp');
+  const hideGlobe = pathname.startsWith('/Bootcamp') || pathname.startsWith('/kaju');
   
   return (
     <>
@@ -86,6 +87,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/Bootcamp" element={<BootcampRegistration />} />
           <Route path="/Bootcamp-info" element={<BootcampInfo />} />
+          <Route path="/kaju" element={<AdminPanel />} />
         </Routes>
       </div>
     </Router>
