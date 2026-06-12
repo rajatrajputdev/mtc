@@ -114,6 +114,10 @@ app.post('/api/register', async (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`Database running`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Database running`);
+  });
+}
+
+export default app;
