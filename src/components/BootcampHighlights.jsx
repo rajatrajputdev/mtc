@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './BootcampHighlights.css';
+import kapidhwajLogo from '../assets/kapidhwaj_logo.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,12 +105,15 @@ const BootcampHighlights = () => {
 
         <div className="hl-partner-box">
           <p className="hl-partner-label">INDUSTRY PARTNER:</p>
-          <h2 className="hl-partner-title">
-            <span className="hl-gradient-blue">KAPIDHWAJ</span>
-            <br/>
-            <span className="hl-outline">INNOVATIONS</span>
-          </h2>
-          <p className="hl-desc text-center">
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <h2 className="hl-partner-title" style={{ margin: 0 }}>
+              <span className="hl-gradient-blue">KAPIDHWAJ</span>
+              <br/>
+              <span className="hl-outline">INNOVATIONS</span>
+            </h2>
+            <img src={kapidhwajLogo} alt="Kapidhwaj Innovations Logo" style={{ height: '120px', objectFit: 'contain' }} />
+          </div>
+          <p className="hl-desc text-center" style={{ marginTop: '20px' }}>
             Empowering the next generation of developers with cutting-edge industry insights and opportunities.
           </p>
         </div>

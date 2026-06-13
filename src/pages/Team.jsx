@@ -23,162 +23,99 @@ const FallbackAvatar = ({ name }) => {
 
 const team = [
   {
-    name: "Saisha Goel",
-    role: "AI Team Lead",
-    teamLine: "AI Team, Content Team",
-    bio: "I am a pre-final year computer science student passionate about Machine Learning, Cloud and Generative AI. I enjoy building practical projects, exploring emerging technologies, and continuously learning to create meaningful, real-world solutions.",
-    linkedin: "https://www.linkedin.com/in/saisha-goel",
-    github: "https://github.com/saishagoel27",
-    img: getImage("Saisha.jpg")
+    name: "Abhishek Agrawal",
+    role: "President",
+    bio: "President of the Microsoft Tech Community at Amity Tech University.",
+    img: ""
   },
   {
-    name: "Siddhant Choudhary",
-    role: "Web Developer",
-    teamLine: "Web Development Team",
-    bio: "I am a web dev nowadays due to ai we forget the simplest things which recently i got embarrassed about but ofc i wont stop because at the end we have to learn from our mistakes and since web dev would soon be dead seeing AIs work will be focusing in Ai and cybersecurity more rest i am the web dev memeber and the most chill guy in the team maybe 🤷‍♂️ And one thing \"etni tension nahi le sakta jo ho gyi dekhi jiaegyi\" ~ Siddhant choudhary",
-    linkedin: "https://www.linkedin.com/in/siddhant-choudhary-635244224?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    img: getImage("Siddhant.jpeg")
+    name: "Meher Bamrah",
+    role: "VP",
+    bio: "“ਜਿਵੇਂ ਸੂਰਜਮੁਖੀ ਸੂਰਜ ਵੱਲ ਮੁੜਦਾ ਹੈ, ਤਿਵੇਂ ਮਨ ਵਾਹਿਗੁਰੂ ਵੱਲ ਮੁੜਨਾ ਚਾਹੀਦਾ ਹੈ।”\nJust like a sunflower turns toward the sun, the mind should turn toward the Divine. 🌻\n\nAlways curious about how things work and how they can be built better. Mostly found exploring AI/ML, research, design, and leadership, building impactful projects and working with teams to create meaningful innovation.",
+    linkedin: "https://www.linkedin.com/in/meherbamrah/",
+    github: "https://github.com/MeherBamrah",
+    img: ""
   },
   {
-    name: "Rishabh Ambawata",
-    role: "Social Media ",
-    teamLine: "Social and Marketing ",
-    bio: "I'm passionate about both software and hardware, exploring how technology works from code to circuits. As an active club member, I contribute to the social and marketing teams, helping promote initiatives and engage the community.",
-    linkedin: "https://www.linkedin.com/in/rishabh-ambawata-9b300a384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    github: "https://github.com/RishabhXD67",
-    img: getImage("Rishabh.jpg")
+    name: "Sanya",
+    role: "Gen Sec",
+    bio: "General Secretary of the Microsoft Tech Community.",
+    img: ""
   },
   {
-    name: "Garv Goyal",
-    role: "Core Member",
-    teamLine: "Web Dev, Social Media ",
-    bio: "Driven individual with strong leadership developed through sports and teamwork. Skilled in C++, Python, Java, and MySQL, with the ability to adapt quickly to challenges and contribute innovative solutions to dynamic teams and organizations.",
-    linkedin: "https://www.linkedin.com/in/garvgoyal03/",
-    github: "https://github.com/Garv787",
-    img: getImage("Garv.jpg")
-  },
-  {
-    name: "Sonakshi Kumar",
-    role: "Web Developer",
-    teamLine: "Web Dev",
-    bio: "I am passionate about technology, problem-solving, and continuous learning. As a member of the Microsoft Technical Community, I actively engage in collaborative projects and technical initiatives that help me explore diverse areas of computer science. I enjoy building skills across different domains and applying my knowledge to solve real-world challenges.",
-    linkedin: "https://www.linkedin.com/in/sonakshi-kumar-1a6a102a2/",
-    github: "https://github.com/sonakshikumar",
-    img: getImage("Sonakshi.jpg")
-  },
-  {
-    name: "Soumyapriya Datta ",
-    role: "Head of Marketing ",
-    teamLine: "Marketing and AIML ",
-    bio: "I am the head of Marketing at MTC. I guide the team members on pitching strategies and event promotions, along with contributing to core operations and management. I also contribute to projects under the AIML domain.",
-    linkedin: "https://www.linkedin.com/in/soumya-priya-datta-437a66345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    github: "https://github.com/Soumyapriyadatta",
-    img: "https://i.pravatar.cc/600?img=5"
-  },
-  {
-    name: "Ojaswi Singh ",
-    role: "Core Member",
-    teamLine: "Design and Marketing  ",
-    bio: "Core member specializing in creative design and event promotion. I develop engaging posters and visual content that help highlight club activities and strengthen the club's outreach and presence.",
-    linkedin: "https://www.linkedin.com/in/ojaswi-singh-74701836a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    img: getImage("Ojaswi.jpg")
-  },
-  {
-    name: "Radhika Srivastava ",
-    role: "Core team member",
-    teamLine: "Social media, ai ",
-    bio: "I'm a curious and fast learner with a strong interest in AI and ML. As a core member of the social media team, I contribute innovative and creative ideas while continuously exploring new skills and opportunities to grow.",
-    img: getImage("Radhika.jpg")
-  },
-  {
-    name: "Saksham",
-    role: "Head Social Media",
-    teamLine: "Social Media, Design",
-    bio: "Builder who enjoys creating smart tech and beautiful visuals. I explore AI, full-stack development, and modern tools while also crafting cinematic edits blending technology and creativity to turn ideas into engaging digital experiences.",
-    linkedin: "https://tinyurl.com/58hm3h2y",
-    github: "https://github.com/saksham3366",
-    img: getImage("Saksham.jpg")
+    name: "Kamakshi Bagga",
+    role: "Treasurer",
+    bio: "Treasurer of the Microsoft Tech Community.",
+    img: ""
   },
   {
     name: "Suhani Sharma",
     role: "Design Lead",
-    teamLine: "Design, Web Dev",
     bio: "Aspiring developer passionate about web development, UI/UX design, and exploring AI/ML. Enjoys creating clean, user-friendly interfaces and continuously learning modern technologies to build innovative solutions.",
     linkedin: "https://www.linkedin.com/in/suhani-sharma-04a546272",
     github: "https://github.com/SuhaniSharma1309",
     img: getImage("Suhani.jpg")
   },
   {
-    name: "Ojasvi Sharma",
-    role: "Core Team member ",
-    teamLine: "Web Dev and content ",
-    bio: "Tech enthusiast with interests in web development, AI, and DevOps.Core member at MTC, contributing to tech events and building a collaborative developer community fueled by curiosity and caffeine.",
-    linkedin: "https://www.linkedin.com/in/ojasvi-sharma-452880253",
-    github: "https://github.com/sharmaojasvi21",
-    img: getImage("Ojasvi2.jpg")
-  },
-  {
-    name: "Aurindom Ghosh",
-    role: "Web Development team member",
-    teamLine: "Web development ",
-    bio: "I enjoy programming and developing web applications and have a natural interest in problem solving, learning new technologies, and contributing to innovative projects as part of the club's web development team.",
-    linkedin: "https://www.linkedin.com/in/aurindom-ghosh-460747210/",
-    github: "https://github.com/Aurindom971",
-    img: getImage("Aurindom.jpg")
-  },
-  {
-    name: "Shanvi Singh",
-    role: "Co-Design Lead",
-    teamLine: "Design, Marketing  ",
+    name: "Shanvi",
+    role: "Design Co-lead",
     bio: "Creative designer passionate about exploring new ideas and learning new things. Enjoy designing posters and social media graphics, experimenting with different styles, and turning ideas into engaging visuals that connect with people.",
     linkedin: "https://www.linkedin.com/in/shanvi-singh-961605377?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     github: "https://github.com/Shanvi-singh001",
     img: getImage("Shanvi.jpg")
   },
   {
-    name: "Jivansh Raghuvanshi ",
-    role: "Content Lead ",
-    teamLine: "Content team, AIML team ",
+    name: "Jivyansh Raghuvanshi",
+    role: "Content Lead",
     bio: "Turning curiosity to Code and Content. Exploring AI through deep learning and computer vision while contributing to the club as Content Team Lead and sharing ideas that make tech more accessible.",
     linkedin: "linkedin.com/in/jivanshraghuvanshi",
     github: "https://github.com/Jivi1512",
     img: getImage("Jivyansh.jpg")
   },
   {
-    name: "Shaurya Mishra  ",
-    role: "Core Member ",
-    teamLine: "Design & Marketing Team ",
-    bio: "Tech enthusiast passionate about web development, data science, and building impactful projects. Always eager to learn new technologies, collaborate with peers, and contribute to the club by helping members with design, marketing, and promoting projects while collaborating on innovative technical ideas.",
-    linkedin: "https://www.linkedin.com/in/shaurya-mishra-3a878b39a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    github: "https://github.com/ShauryaMishra001",
-    img: getImage("Shaurya.jpg")
-  },
-  {
-    name: "Shahee Bhambani",
-    role: "Core Member ",
-    teamLine: "Design team and Social media team ",
-    bio: "Creative designer and social media contributor at Microsoft Technical Community,crafting posters, reels, and digital content.Enthusiastic about web development, design, and combining creativity with technology to promote innovation and technical learning.",
-    linkedin: "https://www.linkedin.com/in/shahee-bhambani",
-    github: "https://github.com/ShaheeBhambani",
-    img: getImage("Shahee.jpg")
-  },
-  {
-    name: "Vyomini Tiwari  ",
-    role: "Member of design team and social media team ",
-    teamLine: "Member of design team and social media team ",
-    bio: "Tech enthusiast passionate about learning and building. A curious mind who enjoys reading books, writing poetry, and exploring new ideas. Always hustling to grow, create impact, and collaborate through the Microsoft Technical Community.",
-    linkedin: "https://www.linkedin.com/in/vyomini-tiwari-a73017384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    github: "https://github.com/vyominiiiiiiii",
-    img: getImage("Vyomini.jpg")
-  },
-  {
-    name: "Anushka Marwaha ",
-    role: "Active member ",
-    teamLine: "Content team, social media team, marketing team",
+    name: "Anushka",
+    role: "Content Co-lead",
     bio: "I'm passionate about AI and machine learning, enjoy building small projects, and love exploring new technologies. I also enjoy swimming, driving, reading",
     linkedin: "http://linkedin.com/in/anushka-marwaha-0ba88933b",
     github: "https://github.com/anushkamarwaha",
     img: getImage("Anushka.jpg")
+  },
+  {
+    name: "Saisha",
+    role: "AI Lead",
+    bio: "I am a pre-final year computer science student passionate about Machine Learning, Cloud and Generative AI. I enjoy building practical projects, exploring emerging technologies, and continuously learning to create meaningful, real-world solutions.",
+    linkedin: "https://www.linkedin.com/in/saisha-goel",
+    github: "https://github.com/saishagoel27",
+    img: getImage("Saisha.jpg")
+  },
+  {
+    name: "Zia",
+    role: "Web Dev Lead",
+    bio: "Web Dev Lead for the Microsoft Tech Community.",
+    img: ""
+  },
+  {
+    name: "Shaksham",
+    role: "Social Media Lead",
+    bio: "Builder who enjoys creating smart tech and beautiful visuals. I explore AI, full-stack development, and modern tools while also crafting cinematic edits blending technology and creativity to turn ideas into engaging digital experiences.",
+    linkedin: "https://tinyurl.com/58hm3h2y",
+    github: "https://github.com/saksham3366",
+    img: getImage("Saksham.jpg")
+  },
+  {
+    name: "Soumyapriya",
+    role: "Marketing Lead",
+    bio: "I am the head of Marketing at MTC. I guide the team members on pitching strategies and event promotions, along with contributing to core operations and management. I also contribute to projects under the AIML domain.",
+    linkedin: "https://www.linkedin.com/in/soumya-priya-datta-437a66345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com/Soumyapriyadatta",
+    img: "https://i.pravatar.cc/600?img=5"
+  },
+  {
+    name: "Ojaswi Singh",
+    role: "Operations Manager",
+    bio: "Core member specializing in creative design and event promotion. I develop engaging posters and visual content that help highlight club activities and strengthen the club's outreach and presence.",
+    linkedin: "https://www.linkedin.com/in/ojaswi-singh-74701836a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    img: getImage("Ojaswi.jpg")
   }
 ];
 

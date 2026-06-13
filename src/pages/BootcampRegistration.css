@@ -418,3 +418,23 @@
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
+
+@media (max-width: 480px) {
+  .success-modal-box {
+    padding: 1.5rem 1rem;
+    max-width: 95%;
+  }
+  .success-icon {
+    font-size: 3rem;
+  }
+  .success-title {
+    font-size: 1.5rem;
+  }
+  .success-message {
+    font-size: 0.95rem;
+  }
+  .whatsapp-btn {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}

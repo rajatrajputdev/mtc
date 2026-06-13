@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './BootcampInfo.css';
 import BootcampHighlights from '../components/BootcampHighlights';
+import BootcampTeam from '../components/BootcampTeam';
+import kapidhwajLogo from '../assets/kapidhwaj_logo.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -332,6 +334,34 @@ const BootcampInfo = () => {
       {/* Kinetic Typography Highlights Section */}
       <BootcampHighlights />
 
+      <BootcampTeam />
+
+      {/* True Sinusoidal Wave Transition Section */}
+      <section className="info-wave-transition">
+        <svg viewBox="0 0 1440 400" className="transition-wave-svg" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="wave-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#fd74fd" />
+              <stop offset="50%" stopColor="#ff9a9e" />
+              <stop offset="100%" stopColor="#fd9140" />
+            </linearGradient>
+            <linearGradient id="wave-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#83f582" />
+              <stop offset="50%" stopColor="#7ff6bc" />
+              <stop offset="100%" stopColor="#7af7f7" />
+            </linearGradient>
+            <linearGradient id="wave-grad-3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#1d1c1c" />
+              <stop offset="100%" stopColor="#444" />
+            </linearGradient>
+          </defs>
+          
+          <SinusoidalWave gradient="wave-grad-3" speed={0.03} amplitude={60} frequency={0.005} height={450} yOffset={200} opacity={0.3} />
+          <SinusoidalWave gradient="wave-grad-1" speed={0.05} amplitude={40} frequency={0.008} height={450} yOffset={230} />
+          <SinusoidalWave gradient="wave-grad-2" speed={-0.04} amplitude={50} frequency={0.006} height={450} yOffset={300} />
+        </svg>
+      </section>
+
       {/* Sticky Horizontal Scroll Cards Section */}
       <section className="info-cards-container">
         {/* Floating Sketch Components in Scroll Area */}
@@ -368,32 +398,6 @@ const BootcampInfo = () => {
         </div>
       </section>
       
-      {/* True Sinusoidal Wave Transition Section */}
-      <section className="info-wave-transition">
-        <svg viewBox="0 0 1440 400" className="transition-wave-svg" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="wave-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#fd74fd" />
-              <stop offset="50%" stopColor="#ff9a9e" />
-              <stop offset="100%" stopColor="#fd9140" />
-            </linearGradient>
-            <linearGradient id="wave-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#83f582" />
-              <stop offset="50%" stopColor="#7ff6bc" />
-              <stop offset="100%" stopColor="#7af7f7" />
-            </linearGradient>
-            <linearGradient id="wave-grad-3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1d1c1c" />
-              <stop offset="100%" stopColor="#444" />
-            </linearGradient>
-          </defs>
-          
-          <SinusoidalWave gradient="wave-grad-3" speed={0.03} amplitude={60} frequency={0.005} height={450} yOffset={200} opacity={0.3} />
-          <SinusoidalWave gradient="wave-grad-1" speed={0.05} amplitude={40} frequency={0.008} height={450} yOffset={230} />
-          <SinusoidalWave gradient="wave-grad-2" speed={-0.04} amplitude={50} frequency={0.006} height={450} yOffset={300} />
-        </svg>
-      </section>
-
       {/* Inverted DNA Wave Transition Section */}
       <section className="info-wave-transition inverted" style={{ transform: 'rotate(180deg)', zIndex: 9, marginTop: '0px' }}>
         <svg viewBox="0 0 1440 400" className="transition-wave-svg" preserveAspectRatio="none">
@@ -463,6 +467,7 @@ const BootcampInfo = () => {
         </div>
       </section>
 
+      
       {/* Expanded Roadmap Card Overlay */}
       {expandedCard && (
         <div className="expanded-card-backdrop" ref={overlayRef} onClick={closeExpandedCard} style={{ position: 'fixed', inset: 0, background: 'rgba(5, 5, 5, 0.8)', backdropFilter: 'blur(8px)', zIndex: 10000, opacity: 0 }}>

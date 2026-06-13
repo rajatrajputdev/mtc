@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
+import nodemailer from 'nodemailer';
 
 dotenv.config();
 
@@ -118,6 +119,39 @@ app.post('/api/register', async (req, res) => {
     });
     
     await newRegistration.save();
+
+    // Send confirmation email
+    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+      try {
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
+          }
+        });
+
+        const mailOptions = {
+          from: process.env.EMAIL_USER,
+          to: email,
+          subject: 'Successfully Registered for Microsoft Tech Community Bootcamp',
+          html: `
+            <h3>Hello ${name},</h3>
+            <p>You are successfully registered for the Microsoft Tech Community Bootcamp!</p>
+            <p>Please join our official WhatsApp group to receive all event updates, links, and announcements:</p>
+            <p><a href="https://chat.whatsapp.com/your-group-link-here">Join WhatsApp Group</a></p>
+            <br/>
+            <p>Thank you,</p>
+            <p>Microsoft Tech Community Team</p>
+          `
+        };
+
+        await transporter.sendMail(mailOptions);
+        console.log('Confirmation email sent to', email);
+      } catch (mailError) {
+        console.error('Error sending confirmation email:', mailError);
+      }
+    }
 
     res.status(201).json({ message: "Registration successful", data: newRegistration });
   } catch (error) {

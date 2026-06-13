@@ -243,7 +243,6 @@ const ContactUs = () => {
               <div className="tiwis-contact">
                 <a href="mailto:contact@microsoftcommunity.amity.edu">HELLO@MLSA.COM</a>
                 <a href="#">LINKEDIN</a>
-                <a href="#">TWITTER</a>
               </div>
               <div className="tiwis-credits">
                 <span>© 2025 MICROSOFT TECHNICAL COMMUNITY</span>
