@@ -173,7 +173,7 @@ app.post('/api/register', async (req, res) => {
               <!-- Main Card -->
               <div style="max-width: 540px; margin: 0 auto; background-color: rgba(15, 10, 20, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 40px 30px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);">
                 
-                <!-- Animation (High-Quality 3D Rocket) -->
+                
                 <div style="margin-bottom: 24px;">
                   <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="Rocket" style="width: 100px; height: 100px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));" />
                 </div>

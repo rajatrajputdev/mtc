@@ -1,4 +1,4 @@
-.bootcamp-ad-container {
+.bootcamp-promo-container {
   position: absolute;
   top: 15vh;
   right: 5vw;
@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.bootcamp-ad-card {
+.bootcamp-promo-card {
   background: #FFF;
   border: 4px solid #1D1C1C;
   border-radius: 12px;
@@ -19,12 +19,12 @@
   transform-style: preserve-3d;
 }
 
-.bootcamp-ad-card:hover {
+.bootcamp-promo-card:hover {
   transform: translate(-4px, -4px) rotate(-2deg);
   box-shadow: 12px 12px 0px #1D1C1C;
 }
 
-.bootcamp-ad-badge {
+.bootcamp-promo-badge {
   background: #1D1C1C;
   color: #FFF;
   font-family: 'DM Sans', sans-serif;
@@ -36,7 +36,7 @@
   margin-bottom: 0.5rem;
 }
 
-.bootcamp-ad-title {
+.bootcamp-promo-title {
   color: #1D1C1C;
   font-family: 'DM Sans', sans-serif;
   font-size: 1.5rem;
@@ -46,7 +46,7 @@
   margin: 0 0 0.5rem 0;
 }
 
-.bootcamp-ad-desc {
+.bootcamp-promo-desc {
   color: #444;
   font-size: 0.9rem;
   font-weight: 500;
@@ -76,7 +76,7 @@
   margin: 8px 0;
 }
 
-.bootcamp-ad-btn {
+.bootcamp-promo-btn {
   background: #F4F4F0;
   color: #1D1C1C;
   border: 3px solid #1D1C1C;
@@ -92,13 +92,13 @@
   width: 100%;
 }
 
-.bootcamp-ad-btn:hover {
+.bootcamp-promo-btn:hover {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px #1D1C1C;
   background: #FFDF00;
 }
 
-.bootcamp-ad-btn:active {
+.bootcamp-promo-btn:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px #1D1C1C;
 }
@@ -140,14 +140,14 @@
   100% { box-shadow: 0 0 0 0 rgba(255, 223, 0, 0), 4px 4px 0px #1D1C1C; }
 }
 
-.bootcamp-ad-svg-1 {
+.bootcamp-promo-svg-1 {
   position: absolute;
   top: -20px;
   right: -20px;
   animation: floatSvg 3s ease-in-out infinite alternate;
 }
 
-.bootcamp-ad-svg-2 {
+.bootcamp-promo-svg-2 {
   position: absolute;
   bottom: -15px;
   left: -15px;
@@ -204,7 +204,7 @@
 }
 
 @media (max-width: 767px) {
-  .bootcamp-ad-container {
+  .bootcamp-promo-container {
     position: fixed;
     top: auto;
     bottom: 20px;
@@ -213,34 +213,34 @@
     width: 220px; /* Make it smaller on mobile */
   }
 
-  .bootcamp-ad-card {
+  .bootcamp-promo-card {
     padding: 1rem;
     border-width: 3px;
   }
 
-  .bootcamp-ad-title {
+  .bootcamp-promo-title {
     font-size: 1.2rem;
   }
 
-  .bootcamp-ad-desc {
+  .bootcamp-promo-desc {
     font-size: 0.8rem;
     margin-bottom: 1rem;
   }
 
-  .bootcamp-ad-btn {
+  .bootcamp-promo-btn {
     padding: 8px 12px;
     font-size: 0.8rem;
     border-width: 2px;
   }
 
-  .bootcamp-ad-svg-1 {
+  .bootcamp-promo-svg-1 {
     width: 30px;
     height: 30px;
     top: -15px;
     right: -15px;
   }
 
-  .bootcamp-ad-svg-2 {
+  .bootcamp-promo-svg-2 {
     width: 25px;
     height: 25px;
     bottom: -10px;
@@ -248,7 +248,7 @@
   }
 }
 
-.bootcamp-ad-overlay {
+.bootcamp-promo-overlay {
   position: fixed;
   inset: 0;
   background: rgba(5, 5, 5, 0.8);
@@ -262,12 +262,12 @@
   transition: opacity 0.5s ease;
 }
 
-.bootcamp-ad-overlay.visible {
+.bootcamp-promo-overlay.visible {
   opacity: 1;
   pointer-events: auto;
 }
 
-.bootcamp-ad-close {
+.bootcamp-promo-close {
   position: absolute;
   top: -15px;
   right: -15px;
@@ -291,13 +291,13 @@
   pointer-events: none;
 }
 
-.bootcamp-ad-close:hover {
+.bootcamp-promo-close:hover {
   transform: scale(1.1);
   background: #FFDF00;
   color: #1D1C1C;
 }
 
-.bootcamp-ad-container.is-banner .bootcamp-ad-close {
+.bootcamp-promo-container.is-banner .bootcamp-promo-close {
   opacity: 1;
   pointer-events: auto;
 }

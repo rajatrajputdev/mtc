@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import BootcampAd from "../components/BootcampAd";
+import BootcampPromo from "../components/BootcampPromo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -180,7 +180,7 @@ const Home = () => {
       )}
 
       <div id="page1">
-        <BootcampAd introFinished={introFinished} />
+        <BootcampPromo introFinished={introFinished} />
         <div className="hero-grid-modern">
           <div className="hero-grid-left">
             <h1 className="hero-huge-title">

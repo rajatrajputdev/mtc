@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./BootcampAd.css";
+import "./BootcampPromo.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BootcampAd = ({ introFinished }) => {
+const BootcampPromo = ({ introFinished }) => {
   const adRef = useRef(null);
   const leftPeekRef = useRef(null);
   const rightPeekRef = useRef(null);
@@ -140,37 +140,37 @@ const BootcampAd = ({ introFinished }) => {
   return (
     <>
       <div 
-        className={`bootcamp-ad-overlay ${isBannerOpen ? 'visible' : ''}`} 
+        className={`bootcamp-promo-overlay ${isBannerOpen ? 'visible' : ''}`} 
         onClick={() => setIsBannerOpen(false)}
       ></div>
 
       <div 
-        className={`bootcamp-ad-container ${isBannerOpen ? 'is-banner' : ''}`} 
+        className={`bootcamp-promo-container ${isBannerOpen ? 'is-banner' : ''}`} 
         ref={adRef}
         onMouseEnter={() => !isBannerOpen && setIsHovered(true)}
         onMouseLeave={() => !isBannerOpen && setIsHovered(false)}
         onClick={() => !isBannerOpen && setIsHovered(!isHovered)}
       >
         <button 
-          className="bootcamp-ad-close" 
+          className="bootcamp-promo-close" 
           onClick={(e) => { e.stopPropagation(); setIsBannerOpen(false); }}
         >
           X
         </button>
-        <div className="bootcamp-ad-card">
-          <svg className="bootcamp-ad-svg-1" width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="bootcamp-promo-card">
+          <svg className="bootcamp-promo-svg-1" width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M50 0L61.2257 38.7743L100 50L61.2257 61.2257L50 100L38.7743 61.2257L0 50L38.7743 38.7743L50 0Z" fill="#FFF48D" stroke="#1D1C1C" strokeWidth="5" strokeLinejoin="round"/>
           </svg>
 
-          <div className="bootcamp-ad-badge">NEW</div>
-          <h3 className="bootcamp-ad-title">Bootcamp Event</h3>
-          <p className="bootcamp-ad-desc">Join our latest bootcamp and level up your skills!</p>
+          <div className="bootcamp-promo-badge">NEW</div>
+          <h3 className="bootcamp-promo-title">Bootcamp Event</h3>
+          <p className="bootcamp-promo-desc">Join our latest bootcamp and level up your skills!</p>
           
           <div className="bootcamp-branch-container">
             {branchStep >= 2 && (
               <div className="bootcamp-branch-level">
                 <button 
-                  className="bootcamp-ad-btn bootcamp-btn-3 bootcamp-aura-btn"
+                  className="bootcamp-promo-btn bootcamp-btn-3 bootcamp-aura-btn"
                   onClick={(e) => {
                     e.stopPropagation();
                     navigate("/Bootcamp-info"); // Plain navigation, no full screen teleport
@@ -185,7 +185,7 @@ const BootcampAd = ({ introFinished }) => {
             {branchStep >= 1 && (
               <div className="bootcamp-branch-level">
                 <button 
-                  className="bootcamp-ad-btn bootcamp-btn-2"
+                  className="bootcamp-promo-btn bootcamp-btn-2"
                   onClick={(e) => {
                     e.stopPropagation();
                     if (branchStep === 1) setBranchStep(2);
@@ -198,7 +198,7 @@ const BootcampAd = ({ introFinished }) => {
             )}
 
             <button 
-              className="bootcamp-ad-btn mythical-gradient-btn"
+              className="bootcamp-promo-btn mythical-gradient-btn"
               onClick={(e) => {
                 e.stopPropagation();
                 if (branchStep === 0) setBranchStep(1);
@@ -209,7 +209,7 @@ const BootcampAd = ({ introFinished }) => {
             </button>
           </div>
           
-          <svg className="bootcamp-ad-svg-2" width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="bootcamp-promo-svg-2" width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="40" fill="#7AF7F7" stroke="#1D1C1C" strokeWidth="6"/>
             <path d="M30 50L45 65L70 35" stroke="#1D1C1C" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -227,4 +227,4 @@ const BootcampAd = ({ introFinished }) => {
   );
 };
 
-export default BootcampAd;
+export default BootcampPromo;
