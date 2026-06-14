@@ -25,6 +25,7 @@ const BootcampAd = ({ introFinished }) => {
   useEffect(() => {
     if (isBannerOpen) {
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
       setIsAnimatingBanner(true);
       gsap.killTweensOf(adRef.current);
       
@@ -50,6 +51,7 @@ const BootcampAd = ({ introFinished }) => {
       });
     } else if (!isBannerOpen && introFinished) {
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
       setIsAnimatingBanner(true);
       gsap.killTweensOf(adRef.current);
       
@@ -87,8 +89,8 @@ const BootcampAd = ({ introFinished }) => {
     // Mobile: Peeking animation from the right door
     mm.add("(max-width: 767px)", () => {
       if (!isHovered) {
-        gsap.to(adRef.current, { x: "65%", rotation: -4, duration: 0.5, ease: "back.out(1.5)" });
-        gsap.to(adRef.current, { x: "60%", duration: 1.5, yoyo: true, repeat: -1, ease: "sine.inOut", overwrite: "auto", delay: 0.5 });
+        gsap.to(adRef.current, { x: "85%", rotation: -4, duration: 0.5, ease: "back.out(1.5)" });
+        gsap.to(adRef.current, { x: "80%", duration: 1.5, yoyo: true, repeat: -1, ease: "sine.inOut", overwrite: "auto", delay: 0.5 });
       } else {
         gsap.to(adRef.current, { x: "0%", rotation: 0, duration: 0.5, ease: "back.out(1.2)", overwrite: "auto" });
       }
@@ -109,7 +111,7 @@ const BootcampAd = ({ introFinished }) => {
       },
       onLeaveBack: () => {
         // Show Main Ad
-        gsap.to(adRef.current, { x: window.innerWidth < 768 ? (isHovered ? "0%" : "60%") : "0%", duration: 0.6, ease: "back.out(1.2)", overwrite: "auto" });
+        gsap.to(adRef.current, { x: window.innerWidth < 768 ? (isHovered ? "0%" : "80%") : "0%", duration: 0.6, ease: "back.out(1.2)", overwrite: "auto" });
         // Hide Peeks
         gsap.to([leftPeekRef.current, rightPeekRef.current], { x: (i) => i === 0 ? "-150%" : "150%", opacity: 0, duration: 0.4, ease: "power3.in" });
       }

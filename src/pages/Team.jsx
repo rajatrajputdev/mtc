@@ -116,7 +116,23 @@ const team = [
     bio: "Core member specializing in creative design and event promotion. I develop engaging posters and visual content that help highlight club activities and strengthen the club's outreach and presence.",
     linkedin: "https://www.linkedin.com/in/ojaswi-singh-74701836a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     img: getImage("Ojaswi.jpg")
-  }
+  },
+  { name: "Anam", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Anam.jpg") },
+  { name: "Aurindom", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Aurindom.jpg") },
+  { name: "Ojaswi Sharma", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Ojasvi2.jpg") },
+  { name: "Radhika", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Radhika.jpg") },
+  { name: "Rishabh", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Rishabh.jpg") },
+  { name: "Shahee Bhambani", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Shahee.jpg") },
+  { name: "Shashank Upadhyay", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Shashank.jpg") },
+  { name: "Shaurya Mishra", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Shaurya.jpg") },
+  { name: "Siddhant", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Siddhant.jpg") },
+  { name: "Sonakshi", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Sonakshi.jpg") },
+  { name: "Vikas", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Vikas.jpg") },
+  { name: "Vyomini", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Vyomini.jpg") },
+  { name: "Garv", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Garv.jpg") },
+  { name: "Krish", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Krish.jpg") },
+  { name: "Mandeep", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Mandeep.jpg") },
+  { name: "Prathamesh Dwivedi", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Prathamesh.jpg") }
 ];
 
 function Team() {

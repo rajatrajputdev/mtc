@@ -486,7 +486,7 @@ const BootcampInfo = () => {
                   <p style={{ color: '#444', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '2rem' }}>{expandedCard.desc}</p>
                 </div>
                 
-                <div style={{ marginTop: 'auto', paddingTop: '2rem', borderTop: '2px solid rgba(0,0,0,0.1)' }}>
+                <div style={{ marginTop: 'auto', paddingTop: '2rem', paddingBottom: '1rem', borderTop: '2px solid rgba(0,0,0,0.1)' }}>
                   <button className="mythical-hero-btn" style={{ padding: '16px 32px', width: '100%', fontSize: '1.2rem', cursor: 'not-allowed', filter: 'grayscale(0.8)', border: 'none' }}>Session Link: Coming Soon</button>
                 </div>
               </div>

@@ -11,22 +11,17 @@ const getImage = (filename) => {
 };
 
 const bootcampTeam = [
-  { name: "Anam", img: getImage("Anam.jpg") },
-  { name: "Aurindom", img: getImage("Aurindom.jpg") },
-  { name: "Ojaswi Sharma", img: getImage("Ojasvi2.jpg") },
-  { name: "Radhika", img: getImage("Radhika.jpg") },
-  { name: "Rishabh", img: getImage("Rishabh.jpg") },
-  { name: "Shahee Bhambani", img: getImage("Shahee.jpg") },
-  { name: "Shashank Upadhyay", img: getImage("Shashank.jpg") },
-  { name: "Shaurya Mishra", img: getImage("Shaurya.jpg") },
-  { name: "Siddhant Choudhary", img: getImage("Siddhant.jpg") },
+  { name: "Anushka Marwaha", img: getImage("Anushka.jpg") },
+  { name: "Aurindam", img: getImage("Aurindom.jpg") },
+  { name: "Kammakshi", img: getImage("Kamakshi.jpg") },
+  { name: "Ojaswi", img: getImage("Ojaswi.jpg") },
+  { name: "Saksham", img: getImage("Saksham.jpg") },
+  { name: "Shahee", img: getImage("Shahee.jpg") },
+  { name: "Siddhant", img: getImage("Siddhant.jpg") },
+  { name: "Shourya", img: getImage("Shaurya.jpg") },
   { name: "Sonakshi", img: getImage("Sonakshi.jpg") },
-  { name: "Vikas", img: getImage("Vikas.jpg") },
-  { name: "Vyomini", img: getImage("Vyomini.jpg") },
-  { name: "Garv", img: getImage("Garv.jpg") },
-  { name: "Krish", img: getImage("Krish.jpg") },
-  { name: "Mandeep", img: getImage("Mandeep.jpg") },
-  { name: "Prathamesh Dwivedi", img: getImage("Prathamesh.jpg") }
+  { name: "Radhika", img: getImage("Radhika.jpg") },
+  { name: "Shanvi", img: getImage("Shanvi.jpg") }
 ];
 
 const FallbackAvatar = ({ name }) => {

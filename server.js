@@ -4,7 +4,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
-import mongoSanitize from 'express-mongo-sanitize';
 import nodemailer from 'nodemailer';
 
 dotenv.config();
@@ -26,7 +25,7 @@ app.use('/api', limiter);
 // Standard Middleware
 app.use(cors());
 app.use(express.json({ limit: '10kb' })); // Limit payload size to prevent payload overflow attacks
-app.use(mongoSanitize()); // Prevent NoSQL injection attacks
+// Removed mongoSanitize() due to Node.js 20+ compatibility TypeError
 
 // MongoDB Connection
 const MONGO_URI = process.env.MONGO_URI;
@@ -305,6 +304,9 @@ import jwt from 'jsonwebtoken';
 
 // Admin Login Route
 app.post('/api/admin/login', (req, res) => {
+  // Force reload .env so manual changes apply immediately without server restart
+  dotenv.config({ override: true });
+  
   const { password } = req.body;
   
   if (!process.env.ADMIN_PASSWORD) {

@@ -138,7 +138,7 @@ const BootcampRegistration = () => {
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <path d="M 50 100 Q 150 50 200 150 T 300 100" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="4" />
             <circle cx="10%" cy="80%" r="40" fill="none" stroke="rgba(253, 116, 253, 0.15)" strokeWidth="2" strokeDasharray="5 5" />
-            <rect x="85%" y="15%" width="60" height="60" fill="none" stroke="rgba(122, 247, 247, 0.15)" strokeWidth="2" transform="rotate(15, 85%, 15%)" />
+            <rect x="85%" y="15%" width="60" height="60" fill="none" stroke="rgba(122, 247, 247, 0.15)" strokeWidth="2" transform="rotate(15)" />
             <path d="M 400 400 L 450 450 M 450 400 L 400 450" stroke="rgba(255,255,255,0.1)" strokeWidth="3" />
           </svg>
         </div>

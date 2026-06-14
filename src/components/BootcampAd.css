@@ -209,8 +209,42 @@
     top: auto;
     bottom: 20px;
     right: 0;
-    transform: translateX(65%);
-    width: 250px;
+    transform: translateX(85%); /* Push more off-screen so it peeks nicely */
+    width: 220px; /* Make it smaller on mobile */
+  }
+
+  .bootcamp-ad-card {
+    padding: 1rem;
+    border-width: 3px;
+  }
+
+  .bootcamp-ad-title {
+    font-size: 1.2rem;
+  }
+
+  .bootcamp-ad-desc {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .bootcamp-ad-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    border-width: 2px;
+  }
+
+  .bootcamp-ad-svg-1 {
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    right: -15px;
+  }
+
+  .bootcamp-ad-svg-2 {
+    width: 25px;
+    height: 25px;
+    bottom: -10px;
+    left: -10px;
   }
 }
 

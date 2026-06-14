@@ -101,7 +101,7 @@ const About = () => {
                         width="400"
                         height="333"
                         loading={idx === 0 ? "eager" : "lazy"}
-                        fetchpriority={idx === 0 ? "high" : "auto"}
+                        fetchPriority={idx === 0 ? "high" : "auto"}
                         decoding="async"
                       />
                     ))}
@@ -132,7 +132,7 @@ const About = () => {
                         width="400"
                         height="333"
                         loading={idx === 0 ? "eager" : "lazy"}
-                        fetchpriority={idx === 0 ? "high" : "auto"}
+                        fetchPriority={idx === 0 ? "high" : "auto"}
                         decoding="async"
                       />
                     ))}
