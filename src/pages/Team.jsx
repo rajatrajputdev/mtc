@@ -34,7 +34,7 @@ const team = [
     bio: "“ਜਿਵੇਂ ਸੂਰਜਮੁਖੀ ਸੂਰਜ ਵੱਲ ਮੁੜਦਾ ਹੈ, ਤਿਵੇਂ ਮਨ ਵਾਹਿਗੁਰੂ ਵੱਲ ਮੁੜਨਾ ਚਾਹੀਦਾ ਹੈ।”\nJust like a sunflower turns toward the sun, the mind should turn toward the Divine. 🌻\n\nAlways curious about how things work and how they can be built better. Mostly found exploring AI/ML, research, design, and leadership, building impactful projects and working with teams to create meaningful innovation.",
     linkedin: "https://www.linkedin.com/in/meherbamrah/",
     github: "https://github.com/MeherBamrah",
-    img: ""
+    img: getImage("Meher.png")
   },
   {
     name: "Sanya",
@@ -45,8 +45,8 @@ const team = [
   {
     name: "Kamakshi Bagga",
     role: "Treasurer",
-    bio: "Treasurer of the Microsoft Tech Community.",
-    img: ""
+    bio: "“Like the sun that rises each day without fail, true growth comes from bringing light wherever you go.” ☀️\n\nDriven by curiosity, leadership, and a passion for continuous growth, I enjoy exploring new ideas, solving meaningful challenges, and turning vision into action. Passionate about AI/ML, Agentic AI, research, and emerging technologies, I am fascinated by the potential of intelligent systems to create real-world impact. With a strong belief in innovation, collaboration, and lifelong learning, I strive to transform ideas into meaningful solutions, inspire those around me, and contribute to initiatives that drive positive change. Always embracing new opportunities and working to leave every place brighter than I found it. ✨",
+    img: getImage("Kamakshi.jpg")
   },
   {
     name: "Suhani Sharma",
@@ -105,10 +105,10 @@ const team = [
   {
     name: "Soumyapriya",
     role: "Marketing Lead",
-    bio: "I am the head of Marketing at MTC. I guide the team members on pitching strategies and event promotions, along with contributing to core operations and management. I also contribute to projects under the AIML domain.",
-    linkedin: "https://www.linkedin.com/in/soumya-priya-datta-437a66345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    bio: "I am Soumyapriya Datta, and I have an inclination towards AI and possess additional skills like java programming, frontend web development, along with hobbies like music and art.",
+    linkedin: "https://www.linkedin.com/in/soumya-priya-datta-437a66345?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     github: "https://github.com/Soumyapriyadatta",
-    img: "https://i.pravatar.cc/600?img=5"
+    img: getImage("Soumyapriya.jpg")
   },
   {
     name: "Ojaswi Singh",
@@ -130,7 +130,15 @@ const team = [
   { name: "Vikas", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Vikas.jpg") },
   { name: "Vyomini", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Vyomini.jpg") },
   { name: "Garv", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Garv.jpg") },
-  { name: "Krish", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Krish.jpg") },
+  { 
+    name: "Krish", 
+    role: "Core Member", 
+    bio: "Hi, I’m Krish Garg, a Computer Science student who loves exploring new ideas and turning them into reality through technology. I’m someone who enjoys learning, taking on challenges, and constantly pushing myself to grow both personally and professionally.\n\nI have a strong interest in technology, problem-solving, and innovation. Whether it’s working on projects, learning new skills, or collaborating with others, I enjoy opportunities that help me expand my knowledge and gain new experiences. I believe that every challenge is a chance to learn something valuable and every experience contributes to becoming a better version of myself.\n\nBeyond academics, I value curiosity, creativity, and continuous improvement. My goal is to keep learning, keep building, and make a meaningful impact wherever I can.", 
+    linkedin: "https://www.linkedin.com/in/krish-garg-8ba67926a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    github: "https://github.com/web0905",
+    img: getImage("Krish.jpg"),
+    objectPosition: "50% 0%"
+  },
   { name: "Mandeep", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Mandeep.jpg") },
   { name: "Prathamesh Dwivedi", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Prathamesh.jpg") }
 ];
@@ -242,7 +250,7 @@ function Team() {
                 aria-label={`Open profile for ${member.name}`}
               >
                 {member.img ? (
-                  <img src={member.img} alt={member.name} loading="lazy" decoding="async" />
+                  <img src={member.img} alt={member.name} loading="lazy" decoding="async" style={member.objectPosition ? { objectPosition: member.objectPosition } : {}} />
                 ) : (
                   <FallbackAvatar name={member.name} />
                 )}
@@ -294,7 +302,7 @@ function Team() {
                   <div className="profile-scroll" data-lenis-prevent>
                     <div className="flash-image">
                       {selectedMember.img ? (
-                        <img src={selectedMember.img} alt={selectedMember.name} />
+                        <img src={selectedMember.img} alt={selectedMember.name} style={selectedMember.objectPosition ? { objectPosition: selectedMember.objectPosition } : {}} />
                       ) : (
                         <FallbackAvatar name={selectedMember.name} />
                       )}
