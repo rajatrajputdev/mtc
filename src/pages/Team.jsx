@@ -34,7 +34,7 @@ const team = [
     bio: "“ਜਿਵੇਂ ਸੂਰਜਮੁਖੀ ਸੂਰਜ ਵੱਲ ਮੁੜਦਾ ਹੈ, ਤਿਵੇਂ ਮਨ ਵਾਹਿਗੁਰੂ ਵੱਲ ਮੁੜਨਾ ਚਾਹੀਦਾ ਹੈ।”\nJust like a sunflower turns toward the sun, the mind should turn toward the Divine. 🌻\n\nAlways curious about how things work and how they can be built better. Mostly found exploring AI/ML, research, design, and leadership, building impactful projects and working with teams to create meaningful innovation.",
     linkedin: "https://www.linkedin.com/in/meherbamrah/",
     github: "https://github.com/MeherBamrah",
-    img: getImage("Meher.png")
+    img: getImage("Meher.jpeg")
   },
   {
     name: "Sanya",
@@ -118,18 +118,18 @@ const team = [
     img: getImage("Ojaswi.jpg")
   },
   { name: "Anam", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Anam.jpg") },
-  { name: "Aurindom", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Aurindom.jpg") },
-  { name: "Ojaswi Sharma", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Ojasvi2.jpg") },
-  { name: "Radhika", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Radhika.jpg") },
-  { name: "Rishabh", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Rishabh.jpg") },
-  { name: "Shahee Bhambani", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Shahee.jpg") },
-  { name: "Shashank Upadhyay", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Shashank.jpg") },
-  { name: "Shaurya Mishra", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Shaurya.jpg") },
-  { name: "Siddhant", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Siddhant.jpg") },
-  { name: "Sonakshi", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Sonakshi.jpg") },
-  { name: "Vikas", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Vikas.jpg") },
-  { name: "Vyomini", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Vyomini.jpg") },
-  { name: "Garv", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Garv.jpg") },
+  { name: "Aurindom", role: "Core Member", bio: "I enjoy programming and developing web applications and have a natural interest in problem solving, learning new technologies, and contributing to innovative projects as part of the club’s web development team.", linkedin: "https://www.linkedin.com/in/aurindom-ghosh-460747210/", github: "https://github.com/Aurindom971", img: getImage("Aurindom.jpg") },
+  { name: "Ojaswi Sharma", role: "Core Member", bio: "Tech enthusiast with interests in web development, AI, and DevOps. Core member at MTC, contributing to tech events and building a collaborative developer community fueled by curiosity and caffeine.", linkedin: "https://www.linkedin.com/in/ojasvi-sharma-452880253", github: "https://github.com/sharmaojasvi21", img: getImage("Ojasvi2.jpg") },
+  { name: "Radhika", role: "Core Member", bio: "I’m a curious and fast learner with a strong interest in AI and ML. As a core member of the social media team, I contribute innovative and creative ideas while continuously exploring new skills and opportunities to grow.", img: getImage("Radhika.jpg") },
+  { name: "Rishabh", role: "Core Member", bio: "I’m passionate about both software and hardware, exploring how technology works from code to circuits. As an active club member, I contribute to the social and marketing teams, helping promote initiatives and engage the community.", linkedin: "https://www.linkedin.com/in/rishabh-ambawata-9b300a384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", github: "https://github.com/RishabhXD67", img: getImage("Rishabh.jpg") },
+  { name: "Shahee Bhambani", role: "Core Member", bio: "Creative designer and social media contributor at Microsoft Technical Community, crafting posters, reels, and digital content.\nEnthusiastic about web development, design, and combining creativity with technology to promote innovation and technical learning.", linkedin: "https://www.linkedin.com/in/shahee-bhambani-52a1b3362?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/shaheebhambani", img: getImage("Shahee.jpg") },
+  { name: "Shashank Upadhyay", role: "Core Member", bio: "I'm a B.Tech CSE (Data Science) student exploring on language and technology through Natural Language Processing and Computational Linguistics. I love working on data-driven projects that solve real-world problems. When I'm out of student mode, you can usually find me learning a new language (currently tackling French!), teaching German, or stargazing with my telescope.", linkedin: "https://www.linkedin.com/in/shashankshyamupadhyay", github: "https://github.com/shashankshyamupadhyay", img: getImage("ShashankUpadhyay.jpeg") },
+  { name: "Shaurya Mishra", role: "Core Member", bio: "Tech enthusiast passionate about web development, data science, and building impactful projects. Always eager to learn new technologies, collaborate with peers, and contribute to the club by helping members with design, marketing, and promoting projects while collaborating on innovative technical ideas.", linkedin: "https://www.linkedin.com/in/shaurya-mishra-3a878b39a?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/ShauryaMishra001", img: getImage("Shaurya.jpg") },
+  { name: "Siddhant", role: "Core Member", bio: "I am a web developer nowadays due to ai we forget the simplest things which recently i got embarrassed about but ofc i wont stop because at the end we have to learn from our mistakes and since web dev would soon be dead seeing AIs work will be focusing in Ai and cybersecurity more. rest i am the web dev memeber and the most chill guy in the team maybe 🤷‍♂️ And one thing \"etni tension nahi le sakta jo ho gyi dekhi jiaegyi\" ~ Siddhant choudhary.", linkedin: "https://www.linkedin.com/in/siddhant-choudhary-635244224?utm_source=share_via&utm_content=profile&utm_medium=member_android", img: getImage("Siddhant.jpg") },
+  { name: "Sonakshi", role: "Core Member", bio: "I am passionate about technology, problem-solving, and continuous learning. As a member of the Microsoft Technical Community, I actively engage in collaborative projects and technical initiatives that help me explore diverse areas of computer science. I enjoy building skills across different domains and applying my knowledge to solve real-world challenges.", linkedin: "https://www.linkedin.com/in/sonakshi-kumar-1a6a102a2/", github: "https://github.com/sonakshikumar", img: getImage("Sonakshi.jpg") },
+  { name: "Vikas", role: "Core Member", bio: "I am a rising sophomore pursuing a Bachelor of Technology (B.Tech) degree at Amity University, Noida. With a strong passion for technology and computers, I have always been inclined toward exploring the technical side of the digital world. Alongside my academic journey, I am a professional video editor with nearly a decade of experience in the creative industry. Over the years, I have developed expertise in visual storytelling, content creation, and post production, combining creativity with technical skills to deliver engaging and impactful media content.", linkedin: "https://www.linkedin.com/in/vikash-singh-47a8a2314?utm_source=share_via&utm_content=profile&utm_medium=member_ios", github: "https://github.com/vikks-ae", img: getImage("Vikas.jpeg") },
+  { name: "Vyomini", role: "Core Member", bio: "Tech enthusiast passionate about learning and building. A curious mind who enjoys reading books, writing poetry, and exploring new ideas. Always hustling to grow, create impact, and collaborate through the Microsoft Technical Community.", linkedin: "https://www.linkedin.com/in/vyomini-tiwari-a73017384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "https://github.com/vyominiiiiiiii", img: getImage("Vyomini.jpg") },
+  { name: "Garv", role: "Core Member", bio: "Driven individual with strong leadership developed through sports and teamwork. Skilled in C++, Python, Java, and MySQL, with the ability to adapt quickly to challenges and contribute innovative solutions to dynamic teams and organizations.", linkedin: "https://www.linkedin.com/in/garvgoyal03/", github: "https://github.com/Garv787", img: getImage("Garv.jpg") },
   { 
     name: "Krish", 
     role: "Core Member", 
@@ -139,7 +139,7 @@ const team = [
     img: getImage("Krish.jpg"),
     objectPosition: "50% 0%"
   },
-  { name: "Mandeep", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Mandeep.jpg") },
+  { name: "Mandeep", role: "Core Member", bio: "Web Development team member with strong interest in backend and full-stack development. Skilled in React, Flask, and Supabase. Passionate about building efficient, scalable applications and continuously improving problem-solving skills through hands-on projects.", linkedin: "https://in.linkedin.com/in/mandeep-undefined-5888202a1", github: "https://share.google/45enANSUPfe3BHEzj", img: getImage("Mandeep.jpg") },
   { name: "Prathamesh Dwivedi", role: "Core Member", bio: "Core Member at Microsoft Tech Community.", img: getImage("Prathamesh.jpg") }
 ];
 

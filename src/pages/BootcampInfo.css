@@ -68,10 +68,10 @@
 }
 
 @keyframes floatNode {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(5vw, -5vw) scale(1.1); }
-  66% { transform: translate(-3vw, 4vw) scale(0.9); }
-  100% { transform: translate(2vw, 2vw) scale(1.05); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(5vw, -5vw, 0) scale(1.1); }
+  66% { transform: translate3d(-3vw, 4vw, 0) scale(0.9); }
+  100% { transform: translate3d(2vw, 2vw, 0) scale(1.05); }
 }
 
 .info-hero-content {
@@ -531,6 +531,35 @@
   margin-top: 4rem;
 }
 
+@media (max-width: 768px) {
+  .node-1 { width: 140vw; height: 140vw; top: -20%; left: -40%; }
+  .node-2 { width: 160vw; height: 160vw; bottom: -30%; right: -40%; }
+  .node-3 { width: 120vw; height: 120vw; top: 20%; left: -10%; }
+  
+  .info-hero-title {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+  
+  .info-hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+  }
+  
+  .info-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .info-scroll-btn, .info-register-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 @media (max-width: 900px) {
   .info-card {
     flex-direction: column !important;
@@ -761,4 +790,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+}
+
+/* Hardware Accelerated Wave Animation */
+@keyframes waveScrollAnim {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(var(--translate-to), 0, 0); }
 }

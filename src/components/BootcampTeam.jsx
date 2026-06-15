@@ -13,7 +13,7 @@ const getImage = (filename) => {
 const bootcampTeam = [
   { name: "Anushka Marwaha", img: getImage("Anushka.jpg") },
   { name: "Aurindam", img: getImage("Aurindom.jpg") },
-  { name: "Kammakshi", img: getImage("Kamakshi.jpg") },
+  { name: "Kamakshi", img: getImage("Kamakshi.jpg") },
   { name: "Ojaswi", img: getImage("Ojaswi.jpg") },
   { name: "Saksham", img: getImage("Saksham.jpg") },
   { name: "Shahee", img: getImage("Shahee.jpg") },

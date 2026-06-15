@@ -216,27 +216,42 @@ const BootcampInfo = () => {
     return () => ctx.revert();
   }, []);
 
-  // True Sinusoidal Wave Component
+  // True Sinusoidal Wave Component (Highly Optimized)
   const SinusoidalWave = ({ gradient, speed, amplitude, frequency, height, yOffset, opacity = 1 }) => {
-    const pathRef = useRef(null);
-    useEffect(() => {
-      let frame;
-      let time = 0;
-      const animate = () => {
-        time += speed;
-        const points = [];
-        for (let x = 0; x <= 1440; x += 20) {
-          const y = Math.sin(x * frequency + time) * amplitude + yOffset;
-          points.push(`${x},${y}`);
-        }
-        const d = `M0,${height} L0,${points[0].split(',')[1]} ` + points.map(p => `L${p}`).join(' ') + ` L1440,${height} Z`;
-        if (pathRef.current) pathRef.current.setAttribute("d", d);
-        frame = requestAnimationFrame(animate);
-      };
-      animate();
-      return () => cancelAnimationFrame(frame);
-    }, [speed, amplitude, frequency, height, yOffset]);
-    return <path ref={pathRef} fill={`url(#${gradient})`} stroke="#1d1c1c" strokeWidth="8" className="wave-path" opacity={opacity} />;
+    const period = (2 * Math.PI) / frequency;
+    // Render an extra period on both sides to allow seamless CSS scrolling
+    const startX = -period;
+    const endX = 1440 + period;
+    
+    const { d, duration, translateTo } = React.useMemo(() => {
+      const points = [];
+      for (let x = startX; x <= endX; x += 10) {
+        const y = Math.sin(x * frequency) * amplitude + yOffset;
+        points.push(`${x},${y}`);
+      }
+      const pathData = `M${startX},${height} L${startX},${points[0].split(',')[1]} ` + points.map(p => `L${p}`).join(' ') + ` L${endX},${height} Z`;
+      
+      const dur = (2 * Math.PI) / Math.abs(speed) / 60;
+      const transTo = speed > 0 ? -period : period;
+      
+      return { d: pathData, duration: dur, translateTo: transTo };
+    }, [speed, amplitude, frequency, height, yOffset, period, startX, endX]);
+
+    return (
+      <path 
+        fill={`url(#${gradient})`} 
+        stroke="#1d1c1c" 
+        strokeWidth="8" 
+        className="wave-path" 
+        opacity={opacity} 
+        d={d}
+        style={{
+          '--translate-to': `${translateTo}px`,
+          animation: `waveScrollAnim ${duration}s linear infinite`,
+          willChange: 'transform'
+        }}
+      />
+    );
   };
 
   return (
