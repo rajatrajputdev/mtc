@@ -289,8 +289,8 @@
 
 @media (max-width: 767px) {
   .bootcamp-reg-page.bw-theme {
-    overflow-y: auto;
-    align-items: flex-start; /* Allow scrolling */
+    overflow: visible;
+    align-items: flex-start; /* Allow natural body scrolling */
   }
 
   .bootcamp-reg-board {

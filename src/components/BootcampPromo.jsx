@@ -120,6 +120,8 @@ const BootcampPromo = ({ introFinished }) => {
     return () => {
       mm.revert();
       hideTrigger.kill();
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
   }, [isHovered, isBannerOpen, isAnimatingBanner]);
 
@@ -173,6 +175,8 @@ const BootcampPromo = ({ introFinished }) => {
                   className="bootcamp-promo-btn bootcamp-btn-3 bootcamp-aura-btn"
                   onClick={(e) => {
                     e.stopPropagation();
+                    document.body.style.overflow = '';
+                    document.documentElement.style.overflow = '';
                     navigate("/Bootcamp-info"); // Plain navigation, no full screen teleport
                   }}
                 >
@@ -202,7 +206,11 @@ const BootcampPromo = ({ introFinished }) => {
               onClick={(e) => {
                 e.stopPropagation();
                 if (branchStep === 0) setBranchStep(1);
-                else navigate("/Bootcamp");
+                else {
+                  document.body.style.overflow = '';
+                  document.documentElement.style.overflow = '';
+                  navigate("/Bootcamp");
+                }
               }}
             >
               Register Now

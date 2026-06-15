@@ -107,7 +107,10 @@ const BootcampInfo = () => {
     }
     
     // Cleanup if component unmounts while modal is open
-    return () => { document.body.style.overflow = ''; };
+    return () => { 
+      document.body.style.overflow = ''; 
+      if (window.lenis) window.lenis.start();
+    };
   }, [expandedCard]);
 
   useEffect(() => {
@@ -129,35 +132,6 @@ const BootcampInfo = () => {
         { y: 50, opacity: 0, scale: 0.9 },
         { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: "power4.out", delay: 0.2 }
       );
-      
-      // Flying Planes Animation
-      const planes = document.querySelectorAll('.flying-plane');
-      planes.forEach((plane) => {
-        gsap.set(plane, {
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
-          rotation: Math.random() * 360,
-          scale: 0.5 + Math.random() * 1.5
-        });
-
-        const fly = () => {
-          const nextX = Math.random() * window.innerWidth;
-          const nextY = Math.random() * window.innerHeight;
-          const currentX = gsap.getProperty(plane, "x");
-          const currentY = gsap.getProperty(plane, "y");
-          const angle = Math.atan2(nextY - currentY, nextX - currentX) * (180 / Math.PI);
-
-          gsap.to(plane, {
-            x: nextX,
-            y: nextY,
-            rotation: angle + 45,
-            duration: 4 + Math.random() * 6,
-            ease: "sine.inOut",
-            onComplete: fly
-          });
-        };
-        fly();
-      });
 
       // Sticky Horizontal Scroll Overhaul
       const cardsContainer = document.querySelector('.info-cards-horizontal-wrapper');
@@ -242,13 +216,6 @@ const BootcampInfo = () => {
     return () => ctx.revert();
   }, []);
 
-  const PlaneSVG = () => (
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7AF7F7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-      <line x1="22" y1="2" x2="11" y2="13"></line>
-    </svg>
-  );
-
   // True Sinusoidal Wave Component
   const SinusoidalWave = ({ gradient, speed, amplitude, frequency, height, yOffset, opacity = 1 }) => {
     const pathRef = useRef(null);
@@ -308,10 +275,11 @@ const BootcampInfo = () => {
 
       {/* Hero Section */}
       <section className="info-hero-section">
-        <div className="planes-container">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className={`flying-plane plane-${i}`}><PlaneSVG /></div>
-          ))}
+        {/* Optimized CSS Glowing Nodes */}
+        <div className="hero-glow-nodes">
+          <div className="glow-node node-1"></div>
+          <div className="glow-node node-2"></div>
+          <div className="glow-node node-3"></div>
         </div>
 
         <div className="info-hero-content">
@@ -454,7 +422,7 @@ const BootcampInfo = () => {
                   <span className="tl-badge">{session.service}</span>
                 </div>
                 <div className="tl-card-body">
-                  <h4>Mini Project: <span>{session.project}</span></h4>
+                  <h4>Tour: <span>{session.project}</span></h4>
                   <p>{session.desc}</p>
                 </div>
               </div>

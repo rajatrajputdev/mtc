@@ -19,21 +19,59 @@
   background: rgba(255, 255, 255, 0.08); /* 8% white tint */
 }
 
-/* Flying Planes */
-.planes-container {
+/* Hero Glow Nodes (Optimized CSS Animation) */
+.hero-glow-nodes {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   pointer-events: none;
   z-index: 1;
 }
 
-.flying-plane {
+.glow-node {
   position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: floatNode 20s infinite alternate ease-in-out;
   will-change: transform;
-  filter: drop-shadow(0 0 10px rgba(122, 247, 247, 0.5));
+}
+
+.node-1 {
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(253,116,253,0.4) 0%, rgba(253,116,253,0) 70%);
+  top: -20%;
+  left: -20%;
+  animation-duration: 25s;
+}
+
+.node-2 {
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, rgba(122,247,247,0.4) 0%, rgba(122,247,247,0) 70%);
+  bottom: -30%;
+  right: -20%;
+  animation-duration: 22s;
+  animation-direction: alternate-reverse;
+}
+
+.node-3 {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(131,245,130,0.4) 0%, rgba(131,245,130,0) 70%);
+  top: 30%;
+  left: 30%;
+  animation-duration: 28s;
+}
+
+@keyframes floatNode {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(5vw, -5vw) scale(1.1); }
+  66% { transform: translate(-3vw, 4vw) scale(0.9); }
+  100% { transform: translate(2vw, 2vw) scale(1.05); }
 }
 
 .info-hero-content {

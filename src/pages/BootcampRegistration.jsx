@@ -155,7 +155,9 @@ const BootcampRegistration = () => {
               </div>
               <h2 className="success-title">Thank You!</h2>
               <p className="success-message">
-                Your application has been successfully submitted. We appreciate your interest in the Bootcamp and a copy of your details has been sent to your email.
+                Your application has been successfully submitted! A copy of your details has been sent to your email.
+                <br/><br/>
+                <strong>Note:</strong> If you don't see the email in your inbox, please make sure to check your <strong>Spam or Junk</strong> folder.
               </p>
               <p className="success-message highlight">
                 Please join our official WhatsApp group to receive all event updates, links, and announcements.
