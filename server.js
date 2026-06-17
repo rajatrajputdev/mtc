@@ -9,6 +9,8 @@ import nodemailer from 'nodemailer';
 dotenv.config();
 
 const app = express();
+app.set('trust proxy', 1); // Trust Render's proxy
+
 const PORT = process.env.PORT || 5001;
 
 // Security Middleware
