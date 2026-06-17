@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import './BootcampRegistration.css';
 
@@ -74,7 +75,8 @@ const BootcampRegistration = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/register', {
+      const API_URL = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${API_URL}/api/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -109,6 +111,23 @@ const BootcampRegistration = () => {
 
   return (
     <div className="bootcamp-reg-page bw-theme" ref={containerRef}>
+      <Helmet>
+        <title>Register for Azure AI Bootcamp | Microsoft Tech Community & Kapidhwaj</title>
+        <meta name="description" content="Secure your spot in the ultimate 8-session Azure AI Bootcamp. Build real AI projects, learn Copilot Studio, and win internships. Register now for free!" />
+        <meta name="keywords" content="Azure AI, Bootcamp Registration, Microsoft Tech Community, Kapidhwaj Innovations, AI Event Sign Up, MLSA" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Register for Azure AI Bootcamp" />
+        <meta property="og:description" content="Join the Microsoft Tech Community for an exclusive Azure AI Bootcamp. Register now to secure your spot!" />
+        <meta property="og:image" content="https://techcommunity.microsoft.com/msteams_16.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Register for Azure AI Bootcamp" />
+        <meta name="twitter:description" content="Join the Microsoft Tech Community for an exclusive Azure AI Bootcamp. Register now to secure your spot!" />
+        <meta name="twitter:image" content="https://techcommunity.microsoft.com/msteams_16.png" />
+      </Helmet>
       
       {/* Seamless Looping Kinetic Typography */}
       <div className="kinetic-text-container">
