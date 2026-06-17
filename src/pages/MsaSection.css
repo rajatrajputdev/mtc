@@ -10,6 +10,97 @@
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* Interactive Microsoft Logo */
+.msa-interactive-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.msa-interactive-logo-container {
+    perspective: 1000px;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    z-index: 20;
+    position: relative;
+}
+
+.msa-logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-out;
+}
+
+.msa-logo-square {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.msa-interactive-logo-container:hover .msa-logo-square {
+    box-shadow: 0 0 15px currentColor;
+}
+
+.msa-interact-hint {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    animation: pulseHint 2s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes pulseHint {
+    0%, 100% { opacity: 0.5; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes idleFloatRed {
+    0%, 100% { transform: translate(0, 0) translateZ(0) rotate(0deg); }
+    50% { transform: translate(-3px, -4px) translateZ(10px) rotate(-2deg); }
+}
+@keyframes idleFloatGreen {
+    0%, 100% { transform: translate(0, 0) translateZ(0) rotate(0deg); }
+    50% { transform: translate(4px, -2px) translateZ(15px) rotate(3deg); }
+}
+@keyframes idleFloatBlue {
+    0%, 100% { transform: translate(0, 0) translateZ(0) rotate(0deg); }
+    50% { transform: translate(-2px, 5px) translateZ(5px) rotate(2deg); }
+}
+@keyframes idleFloatYellow {
+    0%, 100% { transform: translate(0, 0) translateZ(0) rotate(0deg); }
+    50% { transform: translate(3px, 3px) translateZ(10px) rotate(-3deg); }
+}
+
+.square-red { background-color: #f25022; animation: idleFloatRed 4s ease-in-out infinite; }
+.square-green { background-color: #7fba00; animation: idleFloatGreen 3.5s ease-in-out infinite; }
+.square-blue { background-color: #00a4ef; animation: idleFloatBlue 4.5s ease-in-out infinite; }
+.square-yellow { background-color: #ffb900; animation: idleFloatYellow 5s ease-in-out infinite; }
+
+.msa-interactive-logo-container:hover .square-red { 
+    animation-play-state: paused; 
+    transform: translate(-12px, -12px) translateZ(40px) rotate(-8deg); 
+}
+.msa-interactive-logo-container:hover .square-green { 
+    animation-play-state: paused; 
+    transform: translate(12px, -12px) translateZ(40px) rotate(8deg); 
+}
+.msa-interactive-logo-container:hover .square-blue { 
+    animation-play-state: paused; 
+    transform: translate(-12px, 12px) translateZ(40px) rotate(8deg); 
+}
+.msa-interactive-logo-container:hover .square-yellow { 
+    animation-play-state: paused; 
+    transform: translate(12px, 12px) translateZ(40px) rotate(-8deg); 
+}
+
 .msa-glow-orb {
     position: absolute;
     top: 20%;
@@ -321,28 +412,20 @@
 
 @media (max-width: 1024px) {
     .msa-shapes-container {
-        flex-direction: column;
-        gap: 60px;
+        flex-wrap: wrap;
         padding: 0 20px;
+        gap: 0;
     }
     .shape-card {
-        width: 100%;
-        max-width: 320px;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        margin: 0 auto;
-    }
-    .shape-circle, .shape-u {
-        margin: 0;
+        width: 240px;
+        height: 240px;
+        padding: 30px;
     }
     .shape-circle {
-        border-radius: 50%;
+        margin: 0 -20px;
     }
     .shape-u {
-        border-radius: 0 0 160px 160px;
-    }
-    .shape-leaf {
-        border-radius: 0 160px 0 0;
+        margin: 0 -15px;
     }
 }
 
@@ -353,16 +436,49 @@
     .msa-title-art {
         font-size: 3rem;
     }
+    
+    /* Vertically interlocking shapes on mobile to match the 'design way' of laptops */
+    .msa-shapes-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+    }
     .shape-card {
+        width: 100%;
         max-width: 280px;
+        height: 280px;
+        margin: 0 auto !important;
         padding: 20px;
+        transition: transform 0.4s ease;
+    }
+    .shape-rect {
+        transform: translateX(-15px);
+        z-index: 1;
+    }
+    .shape-circle {
+        border-radius: 50%;
+        margin-top: -60px !important;
+        transform: translateX(15px);
+        z-index: 2;
     }
     .shape-u {
         border-radius: 0 0 140px 140px;
+        margin-top: -60px !important;
+        transform: translateX(-15px);
+        z-index: 3;
     }
     .shape-leaf {
         border-radius: 0 140px 0 0;
+        margin-top: -60px !important;
+        transform: translateX(15px);
+        z-index: 4;
     }
+    
+    .shape-card:hover {
+        transform: scale(1.05) translateY(-10px) translateX(0);
+        z-index: 10;
+    }
+
     .deco-shape {
         transform: scale(0.8) !important;
     }
@@ -370,3 +486,4 @@
     .bottom-right { bottom: 10px; right: 10px; }
     .top-left { top: 10px; left: -10px; }
 }
+

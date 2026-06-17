@@ -41,7 +41,8 @@ const team = [
     name: "Sanya",
     role: "General Secretary ",
     bio: "General Secretary of the Microsoft Tech Community.",
-    img: ""
+    linkedin: "https://www.linkedin.com/in/sanyasabharwalss?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    img: getImage("Sanya.jpeg")
   },
   {
     name: "Kamakshi Bagga",

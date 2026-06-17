@@ -6,7 +6,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: clamp(1rem, 4vw, 2rem);
   padding-top: 100px;
   font-family: 'DM Sans', sans-serif;
@@ -289,8 +291,8 @@
 
 @media (max-width: 767px) {
   .bootcamp-reg-page.bw-theme {
-    overflow: visible;
     align-items: flex-start; /* Allow natural body scrolling */
+    -webkit-overflow-scrolling: touch;
   }
 
   .bootcamp-reg-board {

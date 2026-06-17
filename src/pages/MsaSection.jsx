@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const MsaSection = () => {
     const sectionRef = useRef(null);
     const containerRef = useRef(null);
+    const isAnimating = useRef(false);
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -87,6 +88,124 @@ const MsaSection = () => {
         });
     };
 
+    const handleLogoClick = (e) => {
+        if (isAnimating.current) return;
+
+        isAnimating.current = true;
+        const container = e.currentTarget;
+        container.style.pointerEvents = "none"; // Prevent hover effects while animating
+
+        // Hide the interaction hint when clicked
+        gsap.to(".msa-interact-hint", { opacity: 0, duration: 0.3 });
+
+        const mappings = [
+            { square: ".square-blue", card: ".shape-rect", color: "#00a4ef" },
+            { square: ".square-yellow", card: ".shape-circle", color: "#ffb900" },
+            { square: ".square-red", card: ".shape-u", color: "#f25022" },
+            { square: ".square-green", card: ".shape-leaf", color: "#7fba00" }
+        ];
+
+        const tl = gsap.timeline({
+            onComplete: () => { 
+                isAnimating.current = false; 
+                container.style.pointerEvents = "auto";
+            }
+        });
+
+        mappings.forEach((m) => {
+            const sq = document.querySelector(m.square);
+            const card = document.querySelector(m.card);
+            if (!sq || !card) return;
+            
+            // Get screen coordinates
+            const sqRect = sq.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+            
+            // Calculate distance to move to card's center
+            const dx = (cardRect.left + cardRect.width / 2) - (sqRect.left + sqRect.width / 2);
+            const dy = (cardRect.top + cardRect.height / 2) - (sqRect.top + sqRect.height / 2);
+            
+            // Scale needed to cover the card completely
+            const scaleX = cardRect.width / sqRect.width;
+            const scaleY = cardRect.height / sqRect.height;
+            
+            const compStyle = window.getComputedStyle(card);
+            const br = compStyle.borderRadius;
+
+            // Clear any active hover states/animations on square
+            gsap.killTweensOf(sq);
+
+            // Phase 1: Fly out to center of cards, ensuring zero rotation to fix tilt bug
+            tl.to(sq, {
+                x: dx,
+                y: dy,
+                z: 50,
+                rotation: 0,
+                rotationX: 0,
+                rotationY: 0,
+                duration: 0.8,
+                ease: "power3.inOut"
+            }, 0);
+
+            // Phase 2: Expand to perfectly match the card's shape and dimensions
+            tl.to(sq, {
+                scaleX: scaleX,
+                scaleY: scaleY,
+                borderRadius: br,
+                z: 0,
+                duration: 0.4,
+                ease: "power2.out"
+            }, 0.8);
+
+            // Hide the flying square and instantly transition the card's actual background
+            // This ensures text remains perfectly legible on top of the dense solid color
+            tl.to(sq, { opacity: 0, duration: 0.1 }, 1.2);
+            tl.to(card, {
+                backgroundColor: m.color,
+                scale: 1.05,
+                y: -15,
+                boxShadow: `0 40px 80px ${m.color}88, 0 0 40px ${m.color}44`,
+                borderColor: m.color,
+                duration: 0.4,
+                ease: "back.out(1.5)"
+            }, 1.2);
+
+            // Phase 3: Wait and shrink back
+            tl.to(card, {
+                backgroundColor: "transparent",
+                scale: 1,
+                y: 0,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                borderColor: "rgba(255, 255, 255, 0.08)",
+                duration: 0.4,
+                ease: "power2.inOut"
+            }, 3.0);
+            tl.to(sq, { opacity: 1, duration: 0.1 }, 3.0);
+
+            tl.to(sq, {
+                scaleX: 1,
+                scaleY: 1,
+                borderRadius: "0%",
+                z: 50,
+                duration: 0.4,
+                ease: "power2.inOut"
+            }, 3.1);
+
+            // Phase 4: Fly back to logo formation
+            tl.to(sq, {
+                x: 0,
+                y: 0,
+                z: 0,
+                duration: 0.8,
+                ease: "power3.inOut",
+                clearProps: "transform,opacity,borderRadius" // clear inline styles to restore idle/hover effects safely
+            }, 3.5);
+        });
+
+        // Show the hint again after animation
+        tl.to(".msa-interact-hint", { opacity: 0.7, duration: 0.5 }, 4.3);
+    };
+
     return (
         <section id="page-msa" className="msa-section-art" ref={sectionRef}>
             <div className="msa-glow-orb"></div>
@@ -101,6 +220,23 @@ const MsaSection = () => {
                     <p className="msa-description-art">
                         Empowering students globally to learn, lead, and impact their local communities through technology.
                     </p>
+                </div>
+
+                <div className="msa-interactive-wrapper">
+                    {/* Interactive 3D Microsoft Logo */}
+                    <div 
+                        className="msa-interactive-logo-container" 
+                        title="Click for some magic!"
+                        onClick={handleLogoClick}
+                    >
+                        <div className="msa-logo-grid">
+                            <div className="msa-logo-square square-red"></div>
+                            <div className="msa-logo-square square-green"></div>
+                            <div className="msa-logo-square square-blue"></div>
+                            <div className="msa-logo-square square-yellow"></div>
+                        </div>
+                    </div>
+                    <p className="msa-interact-hint">Tap the logo!</p>
                 </div>
 
                 <div className="msa-shapes-container">
