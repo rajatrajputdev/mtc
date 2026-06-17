@@ -127,7 +127,7 @@ app.post('/api/register', async (req, res) => {
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       try {
         const transporter = nodemailer.createTransport({
-          service: 'smtp.gmail.com',
+          host: 'smtp.gmail.com',
             port: 587,
   secure: false,
           auth: {
