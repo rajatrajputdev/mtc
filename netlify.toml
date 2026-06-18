@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/api/*"
-  to = "https://mtc-glgk.onrender.com/api/:splat"
+  to = "https://mtc-backend-five.vercel.app/api/:splat"
   status = 200
   force = true
