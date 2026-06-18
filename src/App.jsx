@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -80,18 +81,20 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="app-container">
-        <GlobalOverlays />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/Bootcamp" element={<BootcampRegistration />} />
-          <Route path="/Bootcamp-info" element={<BootcampInfo />} />
-          <Route path="/kaju" element={<AdminPanel />} />
-        </Routes>
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="app-container">
+          <GlobalOverlays />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/Bootcamp" element={<BootcampRegistration />} />
+            <Route path="/Bootcamp-info" element={<BootcampInfo />} />
+            <Route path="/kaju" element={<AdminPanel />} />
+          </Routes>
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

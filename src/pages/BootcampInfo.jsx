@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './BootcampInfo.css';
@@ -256,6 +257,23 @@ const BootcampInfo = () => {
 
   return (
     <div className="bootcamp-info-page" ref={containerRef}>
+      <Helmet>
+        <title>Azure AI Bootcamp | Microsoft Tech Community & Kapidhwaj</title>
+        <meta name="description" content="Join the ultimate 8-session Azure AI Bootcamp hosted by Microsoft Tech Community. Push your technical boundaries, build 9 real AI projects, and win internships. Explore Azure AI, Copilot Studio, and more." />
+        <meta name="keywords" content="Azure AI, Bootcamp, Microsoft Tech Community, Kapidhwaj Innovations, AI Projects, Machine Learning, Copilot Studio, MLSA, Free AI Bootcamp" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Azure AI Bootcamp | Microsoft Tech Community & Kapidhwaj" />
+        <meta property="og:description" content="Discover the ultimate hands-on Azure AI series. Build real AI products, master generative AI, and win internships." />
+        <meta property="og:image" content="https://techcommunity.microsoft.com/msteams_16.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Azure AI Bootcamp | Microsoft Tech Community & Kapidhwaj" />
+        <meta name="twitter:description" content="Discover the ultimate hands-on Azure AI series. Build real AI products, master generative AI, and win internships." />
+        <meta name="twitter:image" content="https://techcommunity.microsoft.com/msteams_16.png" />
+      </Helmet>
       
       {/* 2D Blueprint Background (Optimized) */}
       <div className="sketch-blueprint-bg">
